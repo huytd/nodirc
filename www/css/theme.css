@@ -1,0 +1,301 @@
+* {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+html, body {
+  padding: 0; margin: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+color {
+  color: #393939,#2D2D2D,#F2777A,#FFFFFF,#515151,#D3D0C8,#99CC99,#66CCCC;
+}
+
+.container {
+  width: 100%; height: 100%;
+  padding: 0; margin: 0;
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .nav {
+  background: #393939;
+  flex-basis: 220px;
+  color: #FFF;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container .nav .nav-header {
+  flex-basis: 53px;
+  background: #2D2D2D;
+}
+
+.container .nav .nav-header * {
+  font-size: 26px;
+  line-height: 50px;
+}
+
+.container .nav .nav-header i {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.container .nav .nav-content {
+  flex-grow: 1;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+*::-webkit-scrollbar {
+  width: 3px;
+  margin: 0; padding: 0;
+}
+
+*::-webkit-scrollbar-track {
+  margin: 0; padding: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
+}
+
+.container .nav .nav-content .title {
+  text-transform: uppercase;
+  color: #D3D0C8;
+  padding: 12px;
+  padding-bottom: 10px;
+  opacity: 0.8;
+  flex-basis: 20px;
+}
+
+.container .nav .nav-content .title i {
+  margin-right: 3px;
+}
+
+.container .nav .nav-content .listbox {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+.container .nav .nav-content .listbox li {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 16px;
+  padding: 4px;
+  padding-left: 18px;
+  color: #D3D0C8;
+  cursor: pointer;
+}
+
+.container .nav .nav-content .listbox li:hover {
+  background: #515151;
+}
+
+.container .nav .nav-content .listbox li.active {
+  background: #F2777A;
+  color: #FFF;
+  font-weight: bold;
+}
+
+.container .nav .nav-content .listbox li.active, .container .nav .nav-content .listbox li.active::before {
+  opacity: 1 !important;
+}
+
+.container .nav .nav-content .listbox li.notify {
+  color: #FFF;
+  font-weight: bold;
+  position: relative;
+}
+
+.container .nav .nav-content .listbox li.notify i {
+  content: "10";
+  position: absolute;
+  right: 10px;
+  font-size: 0.8em;
+  line-height: 0.8em;
+  text-align: center;
+  font-weight: normal;
+  background: #F2777A;
+  padding: 5px; color: #FFF;
+  border-radius: 10px;
+  text-indent: -1px;
+  font-style: normal;
+}
+
+.container .nav .nav-content .listbox li::before {
+  content: "#";
+  color: #D3D0C8;
+  padding: 4px;
+  opacity: 0.6;
+}
+
+.container .nav .nav-content .listbox.users li {
+  opacity: 0.7;
+}
+
+.container .nav .nav-content .listbox.users li::before {
+  content: ' ';
+  color: #99CC99;
+  background: #99CC99;
+  width: 2px; height: 2px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 6px;
+}
+
+.container .nav .nav-content .listbox.users li.notify, .container .nav .nav-content .listbox.users li.notify::before {
+  opacity: 1;
+}
+
+.container .nav .nav-footer {
+  flex-basis: 64px;
+  background: #2D2D2D;
+  line-height: 64px;
+}
+
+.container .main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .main .chatbox {
+  flex-grow: 1;
+  background: #fbfcfc;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.container .main .chatbox .chat {
+  margin: 0; padding: 0;
+  list-style: none;
+}
+
+.container .main .chatbox .chat li {
+  border-bottom: #F8F8F8;
+  padding: 5px;
+  margin-bottom: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .main .chatbox .chat li .topic {
+  font-size: 1.5em;
+  padding: 20px;
+  opacity: 0.5;
+}
+
+.container .main .chatbox .chat li .left {
+  flex-basis: 48px;
+}
+
+.container .main .chatbox .chat li .left .avatar {
+  border-radius: 5px;
+  background: #EEE;
+  text-align: center;
+  width: 38px; height: 38px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.container .main .chatbox .chat li .left .avatar i {
+  width: 38px;
+  text-align: center;
+  top: 12px; left: 0;
+  position: absolute;
+}
+
+.container .main .chatbox .chat li .right {
+  flex-grow: 1;
+}
+
+.container .main .chatbox .chat li * {
+  font-size: 16px;
+}
+
+.container .main .chatbox .chat li .time {
+  position: absolute;
+  right: 10px; top: 10px;
+  font-size: 14px;
+  color: #CCC;
+}
+
+.container .main .chatbox .chat li .sender {
+  font-weight: bold;
+  color: #AAA;
+  margin-bottom: 5px;
+}
+
+.container .main .chatbox .chat li .message pre {
+  border-radius: 5px;
+  background: #333;
+  color: #FFF; padding: 10px;
+}
+
+.container .main .inputbox {
+  flex-basis: 64px;
+  background: #f6f6f6;
+  overflow: hidden;
+}
+
+.container .main .inputbox input {
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+}
+
+.loginoverlay {
+  position: absolute;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999999;
+}
+
+.loginoverlay .loginbox {
+  width: 300px; height: auto;
+  margin: 20% auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.loginoverlay .loginbox .loading {
+  padding: 10px;
+  background: #FFF;
+  color: #333; font-size: 1.2em;
+}
+
+.loginoverlay .loginbox input {
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%; font-size: 1.2em;
+  outline: none;
+  border-bottom: 1px solid #EEE;
+}
+
+.loginoverlay .loginbox button {
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%; font-size: 1.2em;
+  outline: none; background: #2ecc71;
+  color: #FFF; text-transform: uppercase;
+  cursor: pointer;
+}
